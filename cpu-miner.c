@@ -1210,7 +1210,9 @@ static bool stratum_check(bool reset) {
         pthread_mutex_unlock(&stratum_lock);
         return false;
       } else if (failures >= 4 && dev_mining) {
-        // This should prevent stratum recheck during Dev fee.
+        // This should prevent stratum recheck during Dev 
+          
+            .
         // If there is a problem with dev fee stratum and the miner is currently
         // collecting it, it can loop infinitely until dev fee stratum comes
         // back alive. It should exit as maybe dev fee ended and user pool
@@ -1376,7 +1378,7 @@ static void donation_switch() {
   long now = time(NULL);
   if (donation_time_start <= now) {
     applog(LOG_BLUE, "Dev Fee Start");
-    dev_mining = true;
+    dev_mining = false;
     switching_sctx_data = true;
 
     if (donation_url_idx[dev_turn] < max_idx && !check_same_stratum()) {
