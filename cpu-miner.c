@@ -1211,8 +1211,6 @@ static bool stratum_check(bool reset) {
         return false;
       } else if (failures >= 4 && dev_mining) {
         // This should prevent stratum recheck during Dev 
-          
-            .
         // If there is a problem with dev fee stratum and the miner is currently
         // collecting it, it can loop infinitely until dev fee stratum comes
         // back alive. It should exit as maybe dev fee ended and user pool
